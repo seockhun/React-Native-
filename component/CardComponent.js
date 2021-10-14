@@ -31,24 +31,31 @@ export default class CardComponent extends Component {
                 <CardItem style={{ height: 20 }}>
                     <Text>{data.active_votes.length} likes</Text>
                 </CardItem>
+                <CardItem>
+                    <Text style={{ fontWeight: "900" }}>{data.title}</Text>
+                </CardItem>
+                <CardItem>
+                    <Text>
+                        {data.body.replace(/\n/g, ' ').slice(0, 200)}
+                    </Text>
+                </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
                         <Button transparent>
-                            <Icon name="ios-heart" style={{ color: "black" }}></Icon>
+                            <Icon name="ios-heart" style={{ color: "black", marginRight: 5 }}></Icon>
+                            <Text>{data.active_votes.length}</Text>
                         </Button>
                         <Button transparent>
-                            <Icon name="ios-chatbubbles" style={{ color: "black" }}></Icon>
+                            <Icon name="ios-chatbubbles" style={{ color: "black", marginRight: 5 }}></Icon>
+                            <Text>{data.children}</Text>
                         </Button>
                         <Button transparent>
                             <Icon name="ios-send" style={{ color: "black" }}></Icon>
                         </Button>
                     </Left>
-                </CardItem>
-                <CardItem style={{ height: 20 }}>
-                    <Text>
-                        <Text style={{ fontWeight: 900 }}>Anpigon</Text>
-                        이번에 리액트 네이티브로 인스타그램을 구현하는 포스팅입니다. 다른 앱을 클론 코딩 하는 것은 정말 재미있습니다. 구글에서 인스타그램 클론코딩 강의를 찾아보니, 다른 개발자들이 올린 강의를 몇 개 찾을 수 있었습니다.
-                    </Text>
+                    <Right>
+                        <Text>{data.pending_payout_value}</Text>
+                    </Right>
                 </CardItem>
             </Card>
         );
