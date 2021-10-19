@@ -41,10 +41,10 @@ const AppTabNavigator = createBottomTabNavigator({
 
 export default class MainScreen extends Component {
 
+
+
     static navigationOptions = {
-        handerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }}></Icon>,
-        title: "instagram",
-        handerRight: <Icon name="ios-send" style={{ paddingRight: 10 }}></Icon>,
+        header: null
     }
 
     render() {
